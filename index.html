@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HEATHENS // INITIATION</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Cormorant+Garamond:wght@300;400;600&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --paper:#efe8d7;
+    --ink:#151515;
+    --blood:#7A0E16;
+    --gold:#8f7a4c;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#0d0d0d;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Cormorant Garamond', serif;
+    overflow:hidden;
+}
+
+/* Background texture */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 20% 20%, rgba(122,14,22,.15), transparent 25%),
+    radial-gradient(circle at 80% 80%, rgba(122,14,22,.12), transparent 25%);
+    animation:pulse 6s ease-in-out infinite;
+}
+
+@keyframes pulse{
+    0%,100%{opacity:.5;}
+    50%{opacity:1;}
+}
+
+.container{
+    width:min(900px,92vw);
+    position:relative;
+    z-index:2;
+}
+
+.invitation{
+    background:var(--paper);
+    color:var(--ink);
+    border:2px solid var(--ink);
+    padding:60px 50px;
+    position:relative;
+    box-shadow:0 0 50px rgba(0,0,0,.6);
+}
+
+/* Double border */
+.invitation::before{
+    content:"";
+    position:absolute;
+    inset:10px;
+    border:1px solid var(--ink);
+    pointer-events:none;
+}
+
+/* Crest */
+.crest{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.crest .h{
+    font-family:'UnifrakturCook', cursive;
+    font-size:90px;
+    line-height:1;
+}
+
+.crown{
+    color:var(--blood);
+    font-size:22px;
+    margin-bottom:-10px;
+}
+
+.laurel{
+    color:var(--gold);
+    font-size:24px;
+    letter-spacing:8px;
+}
+
+.title{
+    text-align:center;
+    font-family:'Cinzel', serif;
+    font-size:44px;
+    font-weight:800;
+    letter-spacing:6px;
+    margin-top:10px;
+}
+
+.subtitle{
+    text-align:center;
+    font-family:'Cinzel', serif;
+    letter-spacing:4px;
+    margin-bottom:30px;
+}
+
+.stamp{
+    position:absolute;
+    top:40px;
+    right:35px;
+    transform:rotate(12deg);
+    border:3px solid var(--blood);
+    color:var(--blood);
+    padding:8px 16px;
+    font-family:'Cinzel', serif;
+    font-size:14px;
+    font-weight:700;
+}
+
+.message{
+    text-align:center;
+    max-width:600px;
+    margin:0 auto;
+}
+
+.highlight{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    color:var(--blood);
+    font-size:28px;
+    transform:rotate(-6deg);
+    display:inline-block;
+    margin-bottom:25px;
+}
+
+.message p{
+    font-size:28px;
+    margin:12px 0;
+}
+
+.bold{
+    font-weight:700;
+}
+
+.blood{
+    color:var(--blood);
+    font-weight:700;
+}
+
+.divider{
+    width:160px;
+    height:1px;
+    background:var(--ink);
+    margin:30px auto;
+}
+
+.secret{
+    margin-top:25px;
+    font-family:'Cinzel', serif;
+    letter-spacing:2px;
+    font-size:14px;
+}
+
+.footer{
+    margin-top:40px;
+    text-align:center;
+}
+
+.button{
+    display:inline-block;
+    margin-top:18px;
+    padding:12px 28px;
+    border:1px solid var(--ink);
+    text-decoration:none;
+    color:var(--ink);
+    font-family:'Cinzel', serif;
+    transition:.3s;
+}
+
+.button:hover{
+    background:var(--ink);
+    color:var(--paper);
+}
+
+.hidden-message{
+    display:none;
+    margin-top:25px;
+    color:var(--blood);
+    font-size:24px;
+    font-weight:600;
+}
+
+@media(max-width:700px){
+
+    .invitation{
+        padding:40px 25px;
+    }
+
+    .title{
+        font-size:30px;
+    }
+
+    .crest .h{
+        font-size:70px;
+    }
+
+    .message p{
+        font-size:22px;
+    }
+
+    .highlight{
+        font-size:22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="invitation">
+
+<div class="stamp">CONFIDENTIAL</div>
+
+<div class="crest">
+    <div class="crown">♛</div>
+    <div class="laurel">❦ ❦ ❦</div>
+    <div class="h">H</div>
+</div>
+
+<h1 class="title">HEATHENS</h1>
+<div class="subtitle">INITIATION NOTICE</div>
+
+<div class="message">
+
+<div class="highlight">
+YOUR PRESENCE HAS BEEN REQUESTED
+</div>
+
+<p>Welcome, Heathen.</p>
+
+<div class="divider"></div>
+
+<p>You found what was never meant to be found.</p>
+
+<p>The invitation was only the beginning.</p>
+
+<p>You were given a name.</p>
+
+<p>You were given a choice.</p>
+
+<p class="bold">You chose to enter.</p>
+
+<div class="divider"></div>
+
+<p>From this moment forward,</p>
+
+<p class="blood">nothing is accidental.</p>
+
+<div class="divider"></div>
+
+<p>Keep your secrets.</p>
+<p>Trust no one.</p>
+
+<div class="divider"></div>
+
+<p class="blood">YOU HAVE BEEN CHOSEN.</p>
+
+<div class="secret">
+INVITEE NO. 07
+</div>
+
+<div class="footer">
+<a href="#" class="button" onclick="revealMessage(); return false;">
+ENTER
+</a>
+
+<div class="hidden-message" id="secret">
+The Heathens are always watching.
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<script>
+function revealMessage(){
+    document.getElementById("secret").style.display = "block";
+}
+</script>
+
+</body>
+</html>
