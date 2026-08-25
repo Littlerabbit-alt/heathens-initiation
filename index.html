@@ -24,14 +24,23 @@
     box-sizing:border-box;
 }
 
+html{
+    min-height:100%;
+}
+
 body{
     background:#0d0d0d;
     min-height:100vh;
     display:flex;
     justify-content:center;
-    align-items:center;
+    align-items:flex-start;
     font-family:'Cormorant Garamond', serif;
-    overflow:hidden;
+
+    /* FIX: allow the invitation to scroll */
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    padding:30px 0;
 }
 
 /* Background texture */
@@ -55,6 +64,7 @@ body::before{
     );
 
     animation:pulse 6s ease-in-out infinite;
+    pointer-events:none;
 }
 
 @keyframes pulse{
@@ -276,7 +286,7 @@ body::before{
 
 
 /* =========================
-   ENTER BUTTON
+   ENTER SECTION
 ========================= */
 
 .footer{
@@ -284,7 +294,54 @@ body::before{
     margin-top:40px;
 
     text-align:center;
+
+    padding-bottom:15px;
 }
+
+.enter-prompt{
+
+    font-family:'Cinzel', serif;
+
+    font-size:13px;
+
+    letter-spacing:3px;
+
+    margin-top:25px;
+
+    margin-bottom:10px;
+}
+
+.enter-instruction{
+
+    font-family:'Cinzel', serif;
+
+    font-size:11px;
+
+    letter-spacing:4px;
+
+    color:var(--blood);
+
+    margin-bottom:5px;
+
+    animation:enterPulse 2s ease-in-out infinite;
+}
+
+@keyframes enterPulse{
+
+    0%,100%{
+        opacity:.45;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+}
+
+
+/* =========================
+   ENTER BUTTON
+========================= */
 
 .button{
 
@@ -292,7 +349,7 @@ body::before{
 
     margin-top:18px;
 
-    padding:12px 28px;
+    padding:12px 32px;
 
     border:1px solid var(--ink);
 
@@ -305,6 +362,8 @@ body::before{
     letter-spacing:2px;
 
     transition:.3s;
+
+    cursor:pointer;
 }
 
 .button:hover{
@@ -320,6 +379,10 @@ body::before{
 ========================= */
 
 @media(max-width:700px){
+
+    body{
+        padding:15px 0;
+    }
 
     .invitation{
 
@@ -357,6 +420,14 @@ body::before{
         padding:6px 10px;
     }
 
+    .enter-prompt{
+        font-size:11px;
+    }
+
+    .enter-instruction{
+        font-size:9px;
+    }
+
 }
 
 </style>
@@ -364,7 +435,6 @@ body::before{
 
 
 <body>
-
 
 <div class="container">
 
@@ -484,11 +554,17 @@ body::before{
             </div>
 
 
-            <!-- =========================================
-                 ENTER NOW GOES TO MASK PAGE
-            ========================================== -->
+            <!-- ENTER -->
 
             <div class="footer">
+
+                <div class="enter-prompt">
+                    YOUR NEXT STEP AWAITS
+                </div>
+
+                <div class="enter-instruction">
+                    PRESS ENTER
+                </div>
 
                 <a
                     href="mask.html"
@@ -505,7 +581,6 @@ body::before{
     </div>
 
 </div>
-
 
 </body>
 </html>
